@@ -37,7 +37,8 @@ public class Medico {
     public Medico(DadosCadastroMedico dados) {
         this.nome = dados.nome();
         this.email = dados.email(); 
-        this.crm = dados.crm();    
+        this.crm = dados.crm(); 
+        this.especialidade = dados.especialidade(); // Atribui a especialidade do médico   
         this.endereco = new Endereco(dados.endereco()); // Cria um novo objeto Endereco com os dados fornecidos
     }
 }
