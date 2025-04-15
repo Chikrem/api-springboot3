@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class MedicoController {
     
     @PostMapping
-    public void cadastrarMedico(@RequestBody String json) {
+    public void cadastrarMedico(@RequestBody DadosCadastroMedico dados) {
         System.out.println("Cadastrando médico");
-        System.out.println(json);
+        System.out.println(dados);
     }
 }
