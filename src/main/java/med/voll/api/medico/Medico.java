@@ -34,6 +34,8 @@ public class Medico {
     
     @Embedded
     private Endereco endereco;
+
+    private Boolean ativo;
     
     public Medico(DadosCadastroMedico dados) {
         this.nome = dados.nome();
@@ -42,6 +44,7 @@ public class Medico {
         this.crm = dados.crm(); 
         this.especialidade = dados.especialidade(); // Atribui a especialidade do médico   
         this.endereco = new Endereco(dados.endereco()); // Cria um novo objeto Endereco com os dados fornecidos
+        this.ativo = true; // Define o médico como ativo por padrão
     }
 
     public void atualizarInformacoes(DadosAtualizacaoMedico dados) {
@@ -54,5 +57,9 @@ public class Medico {
         if (dados.endereco() != null) {
             this.endereco.atualizarInformacoes(dados.endereco());
         }
+    }
+
+    public void excluir() {
+        this.ativo = false; // Define o médico como inativo em vez de excluí-lo do banco de dados
     }
 }

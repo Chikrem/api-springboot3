@@ -1,7 +1,5 @@
 package med.voll.api.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -55,7 +53,8 @@ public class MedicoController {
     @Transactional
     public void excluirMedico(@PathVariable Long id) {
         System.out.println("Excluindo médico com ID: " + id);
-        repository.deleteById(id);
+        var medico = repository.getReferenceById(id);
+        medico.excluir();
         System.out.println("Médico excluído com sucesso");
     }
 
