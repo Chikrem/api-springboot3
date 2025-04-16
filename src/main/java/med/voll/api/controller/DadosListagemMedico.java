@@ -1,9 +1,15 @@
 package med.voll.api.controller;
 
 import med.voll.api.medico.Especialidade;
+import med.voll.api.medico.Medico;
 
 public record DadosListagemMedico(
-    String nome, 
-    String crm, 
-    String email, 
-    Especialidade especialidade) {} 
+        String nome,
+        String crm,
+        String email,
+        Especialidade especialidade) {
+            
+    public DadosListagemMedico(Medico medico) {
+        this(medico.getNome(), medico.getEmail(), medico.getCrm(), medico.getEspecialidade());
+    }
+}
