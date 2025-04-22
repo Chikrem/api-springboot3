@@ -12,7 +12,6 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.controller.DadosCadastroMedico;
 import med.voll.api.endereco.Endereco;
 
 @Table(name = "medicos")
